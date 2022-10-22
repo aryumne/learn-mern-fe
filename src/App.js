@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import Router from "./routes";
+import LinearProgress from '@mui/material/LinearProgress';
+import Box from '@mui/material/Box';
+import { AuthCtxProvider } from "./configs/context/AuthContext";
+import Authentication from "./utils/Authentication";
+
+function CircularIndeterminate() {
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <LinearProgress />
+    </Box>
+  );
+}
 
 function App() {
+  const { token, userId, login, logout } = Authentication();
+
+  const AuthCtxValue = {
+    isLoggedIn: !!token,
+    userId: userId,
+    token: token,
+    login: login,
+    logout: logout
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthCtxProvider valueCtx={AuthCtxValue}>
+      <RouterProvider router={Router} fallbackElement={<CircularIndeterminate />} />
+    </AuthCtxProvider>
   );
 }
 
