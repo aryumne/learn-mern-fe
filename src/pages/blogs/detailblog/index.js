@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import BoxSection from '../../../component/BoxSection';
 import Blogs from "../../../configs/dummies/Blogs";
