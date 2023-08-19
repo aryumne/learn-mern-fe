@@ -27,7 +27,7 @@ const Profile = () => {
       }
       setIsloading(false);
     }
-  }, []);
+  }, [uid]);
   return (
     <BoxSection>
       <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
