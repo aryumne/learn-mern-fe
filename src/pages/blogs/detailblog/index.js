@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import BoxSection from '../../../component/BoxSection';
 import Blogs from "../../../configs/dummies/Blogs";
@@ -7,7 +7,6 @@ import ImageView from "../../../component/ImageView";
 
 const DetailBlog = () => {
   const { slug } = useParams();
-  const [isLoading, setIsLoading] = useState(true);
 
   const Blog = Blogs.find(b => (b.slug === slug));
   return (

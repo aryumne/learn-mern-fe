@@ -31,7 +31,7 @@ function Main(props) {
 
   useEffect(() => {
     !auth.isLoggedIn && navigate('/login');
-  }, []);
+  }, [auht.isLoggedIn, navigate]);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

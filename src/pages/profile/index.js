@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 const Profile = () => {
   const { uid } = useParams();
   const [user, setUser] = useState({});
-  const [isLoading, setIsloading] = useState(true);
   useEffect(() => {
     return async () => {
       try {
@@ -25,7 +24,6 @@ const Profile = () => {
       } catch (e) {
         console.log(e.message);
       }
-      setIsloading(false);
     }
   }, [uid]);
   return (
