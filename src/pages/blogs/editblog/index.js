@@ -12,7 +12,6 @@ import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../../utils/Validator
 const EditBlog = () => {
   const { slug } = useParams();
   const InputFocus = useRef();
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     InputFocus.current.focus();
   }, []);
@@ -46,7 +45,6 @@ const EditBlog = () => {
         true
       )
     }
-    setIsLoading(false)
   })
 
 
